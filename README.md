@@ -9,3 +9,7 @@ App that shows user's current location with MapKit
 * Add Pin/Marker to map
 * Update Pin/Marker position in map when device's location changes
 * SegmentedControl to change map type
+
+## Screenshots
+
+<img src="/screenshots/screen1.png" width="300px"/>
