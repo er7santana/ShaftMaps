@@ -14,6 +14,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var mapTypeSegmentedControl: UISegmentedControl!
     let annotation = MKPointAnnotation()
     let regionRadius: CLLocationDistance = 1000
     let locationManager = CLLocationManager()
@@ -65,39 +66,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         else {
             annotation.coordinate = locValue
         }
-            
-        
-        
-
-        
-        
-        //centerMap(locValue)
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        checkLocationAuthorizationStatus()
-//
-//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-//            if let currentLocation = mapView.userLocation.location {
-//                centerMapOnLocation(location: currentLocation)
-//            }
-//        }
-//    }
-//
-//    func checkLocationAuthorizationStatus() {
-//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-//            mapView.showsUserLocation = true
-//        } else {
-//            locationManager.requestWhenInUseAuthorization()
-//        }
-//    }
-//
-//    func centerMapOnLocation(location: CLLocation) {
-//        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
-//                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-//        mapView.setRegion(coordinateRegion, animated: true)
-//    }
+    @IBAction func mapTypeChanged(_ sender: UISegmentedControl) {
+        mapView.mapType = MKMapType.init(rawValue: UInt(sender.selectedSegmentIndex)) ?? .standard
+    }
     
 }
 

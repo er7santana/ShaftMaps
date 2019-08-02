@@ -24,28 +24,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cBo-Bi-DSo">
+                                <rect key="frame" x="100" y="136.5" width="214" height="29"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="AFN-jV-GOX"/>
+                                </connections>
+                            </segmentedControl>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JTi-zH-2Hq">
-                                <rect key="frame" x="0.0" y="142.5" width="414" height="719.5"/>
+                                <rect key="frame" x="0.0" y="174.5" width="414" height="687.5"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JTi-zH-2Hq" secondAttribute="trailing" id="2K2-Hg-kEN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JTi-zH-2Hq" secondAttribute="bottom" id="3hL-e5-Buv"/>
+                            <constraint firstItem="cBo-Bi-DSo" firstAttribute="top" secondItem="4EK-sa-h4R" secondAttribute="bottom" constant="4" id="4oR-ck-7GM"/>
+                            <constraint firstItem="JTi-zH-2Hq" firstAttribute="top" secondItem="cBo-Bi-DSo" secondAttribute="bottom" constant="10" id="Djg-hN-2fe"/>
                             <constraint firstItem="JTi-zH-2Hq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HEl-fa-fPM"/>
+                            <constraint firstItem="cBo-Bi-DSo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IH9-hb-bsY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4EK-sa-h4R" secondAttribute="trailing" id="Pcf-Wr-3N8"/>
-                            <constraint firstItem="JTi-zH-2Hq" firstAttribute="top" secondItem="4EK-sa-h4R" secondAttribute="bottom" constant="10" id="Uq2-9o-rs5"/>
+                            <constraint firstItem="cBo-Bi-DSo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="S1j-03-nwP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cBo-Bi-DSo" secondAttribute="trailing" constant="100" id="fg3-TI-kDd"/>
                             <constraint firstItem="4EK-sa-h4R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pKX-gS-mdi"/>
                             <constraint firstItem="4EK-sa-h4R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tzE-OZ-rxc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="mapTypeSegmentedControl" destination="cBo-Bi-DSo" id="AXc-mB-Gvz"/>
                         <outlet property="mapView" destination="JTi-zH-2Hq" id="qe4-9u-XBH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="100.44642857142857"/>
         </scene>
     </scenes>
 </document>
